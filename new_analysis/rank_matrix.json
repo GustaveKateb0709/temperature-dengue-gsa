@@ -1,0 +1,3403 @@
+{
+  "task": "Rank matrix: 3 responses x 3 parameter-range designs",
+  "responses": [
+    "static_R0",
+    "peak_ih",
+    "cum_infected"
+  ],
+  "ranges": [
+    "published",
+    "hw20",
+    "hw50"
+  ],
+  "cell_definition": "Each cell is the 8-parameter ranking by |PRCC| under one (response, range) combination; all cells use n=2000 LHS samples with seed 20260816 (paired uniform variates across cells) and the Marino et al. (2008) estimator with df = n - 9. Static cells use the algebraic R0; dynamic cells use the 1,095-day baseline simulation (daily output grid, parabolically refined peak).",
+  "notes": {
+    "beta_vh_hw50_capped_at_1": "In the +/-50 % designs the upper bound of beta_vh (0.70*1.5 = 1.05) is capped at the probability bound 1.0; all other bounds follow the literal +/-50 %.",
+    "peak_day_excluded": "peak_day is reported in tasks A/D/G but excluded from the matrix: a static R0 has no timing counterpart, so a 3x3 matrix for it would be unbalanced."
+  },
+  "cells": {
+    "static_R0@published": {
+      "source": "static_prcc_reference.json",
+      "prcc": {
+        "nv_ratio": 0.954,
+        "beta_hv": 0.762,
+        "beta_vh": 0.775,
+        "mu_v": -0.722,
+        "gamma_h": -0.639,
+        "b": 0.573,
+        "eip_days": -0.354,
+        "sigma_h": 0.0
+      },
+      "rank": {
+        "nv_ratio": 1,
+        "beta_vh": 2,
+        "beta_hv": 3,
+        "mu_v": 4,
+        "gamma_h": 5,
+        "b": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    },
+    "static_R0@hw20": {
+      "source": "static_equalwidth_prcc.json#half_width_20",
+      "prcc": {
+        "nv_ratio": 0.858,
+        "beta_hv": 0.861,
+        "beta_vh": 0.866,
+        "mu_v": -0.904,
+        "gamma_h": -0.864,
+        "b": 0.962,
+        "eip_days": -0.428,
+        "sigma_h": 0.021
+      },
+      "rank": {
+        "b": 1,
+        "mu_v": 2,
+        "beta_vh": 3,
+        "gamma_h": 4,
+        "beta_hv": 5,
+        "nv_ratio": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    },
+    "static_R0@hw50": {
+      "source": "static_equalwidth_prcc.json#half_width_50",
+      "prcc": {
+        "nv_ratio": 0.816,
+        "beta_hv": 0.821,
+        "beta_vh": 0.815,
+        "mu_v": -0.869,
+        "gamma_h": -0.825,
+        "b": 0.947,
+        "eip_days": -0.346,
+        "sigma_h": 0.012
+      },
+      "rank": {
+        "b": 1,
+        "mu_v": 2,
+        "gamma_h": 3,
+        "beta_hv": 4,
+        "nv_ratio": 5,
+        "beta_vh": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    },
+    "peak_ih@published": {
+      "source": "dynamic_prcc.json#outputs.peak_ih",
+      "prcc": {
+        "nv_ratio": 0.95,
+        "beta_hv": 0.737,
+        "beta_vh": 0.757,
+        "mu_v": -0.476,
+        "gamma_h": -0.729,
+        "b": 0.553,
+        "eip_days": -0.394,
+        "sigma_h": 0.263
+      },
+      "rank": {
+        "nv_ratio": 1,
+        "beta_vh": 2,
+        "beta_hv": 3,
+        "gamma_h": 4,
+        "b": 5,
+        "mu_v": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    },
+    "cum_infected@published": {
+      "source": "dynamic_prcc.json#outputs.cum_infected",
+      "prcc": {
+        "nv_ratio": 0.955,
+        "beta_hv": 0.758,
+        "beta_vh": 0.777,
+        "mu_v": -0.645,
+        "gamma_h": -0.559,
+        "b": 0.571,
+        "eip_days": -0.41,
+        "sigma_h": 0.117
+      },
+      "rank": {
+        "nv_ratio": 1,
+        "beta_vh": 2,
+        "beta_hv": 3,
+        "mu_v": 4,
+        "b": 5,
+        "gamma_h": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    },
+    "peak_ih@hw20": {
+      "source": "equalwidth_prcc.json#outputs.peak_ih",
+      "prcc": {
+        "nv_ratio": 0.827,
+        "beta_hv": 0.811,
+        "beta_vh": 0.829,
+        "mu_v": -0.623,
+        "gamma_h": -0.943,
+        "b": 0.946,
+        "eip_days": -0.454,
+        "sigma_h": 0.637
+      },
+      "rank": {
+        "b": 1,
+        "gamma_h": 2,
+        "beta_vh": 3,
+        "nv_ratio": 4,
+        "beta_hv": 5,
+        "sigma_h": 6,
+        "mu_v": 7,
+        "eip_days": 8
+      }
+    },
+    "cum_infected@hw20": {
+      "source": "equalwidth_prcc.json#outputs.cum_infected",
+      "prcc": {
+        "nv_ratio": 0.786,
+        "beta_hv": 0.771,
+        "beta_vh": 0.792,
+        "mu_v": -0.866,
+        "gamma_h": -0.773,
+        "b": 0.934,
+        "eip_days": -0.322,
+        "sigma_h": 0.01
+      },
+      "rank": {
+        "b": 1,
+        "mu_v": 2,
+        "beta_vh": 3,
+        "nv_ratio": 4,
+        "gamma_h": 5,
+        "beta_hv": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    },
+    "peak_ih@hw50": {
+      "source": "equalwidth50_prcc.json#outputs.peak_ih",
+      "prcc": {
+        "nv_ratio": 0.716,
+        "beta_hv": 0.699,
+        "beta_vh": 0.705,
+        "mu_v": -0.504,
+        "gamma_h": -0.87,
+        "b": 0.901,
+        "eip_days": -0.314,
+        "sigma_h": 0.461
+      },
+      "rank": {
+        "b": 1,
+        "gamma_h": 2,
+        "nv_ratio": 3,
+        "beta_vh": 4,
+        "beta_hv": 5,
+        "mu_v": 6,
+        "sigma_h": 7,
+        "eip_days": 8
+      }
+    },
+    "cum_infected@hw50": {
+      "source": "equalwidth50_prcc.json#outputs.cum_infected",
+      "prcc": {
+        "nv_ratio": 0.761,
+        "beta_hv": 0.757,
+        "beta_vh": 0.757,
+        "mu_v": -0.821,
+        "gamma_h": -0.735,
+        "b": 0.926,
+        "eip_days": -0.323,
+        "sigma_h": 0.09
+      },
+      "rank": {
+        "b": 1,
+        "mu_v": 2,
+        "nv_ratio": 3,
+        "beta_hv": 4,
+        "beta_vh": 5,
+        "gamma_h": 6,
+        "eip_days": 7,
+        "sigma_h": 8
+      }
+    }
+  },
+  "pairwise_matrix": {
+    "static_R0@published|static_R0@hw20": {
+      "spearman_rho": 0.286,
+      "spearman_p": 0.49272624501695705,
+      "kendall_tau": 0.143,
+      "kendall_p": 0.7195436507936508
+    },
+    "static_R0@published|static_R0@hw50": {
+      "spearman_rho": 0.214,
+      "spearman_p": 0.6103444156452668,
+      "kendall_tau": 0.071,
+      "kendall_p": 0.9048611111111111
+    },
+    "static_R0@published|peak_ih@published": {
+      "spearman_rho": 0.929,
+      "spearman_p": 0.0008629681828999772,
+      "kendall_tau": 0.857,
+      "kendall_p": 0.001736111111111111
+    },
+    "static_R0@published|peak_ih@hw20": {
+      "spearman_rho": 0.262,
+      "spearman_p": 0.5309228615658009,
+      "kendall_tau": 0.143,
+      "kendall_p": 0.7195436507936508
+    },
+    "static_R0@published|peak_ih@hw50": {
+      "spearman_rho": 0.381,
+      "spearman_p": 0.3518125531175649,
+      "kendall_tau": 0.286,
+      "kendall_p": 0.39875992063492066
+    },
+    "static_R0@published|cum_infected@published": {
+      "spearman_rho": 0.976,
+      "spearman_p": 3.3143960262000996e-05,
+      "kendall_tau": 0.929,
+      "kendall_p": 0.0003968253968253968
+    },
+    "static_R0@published|cum_infected@hw20": {
+      "spearman_rho": 0.429,
+      "spearman_p": 0.2894032248467902,
+      "kendall_tau": 0.286,
+      "kendall_p": 0.39875992063492066
+    },
+    "static_R0@published|cum_infected@hw50": {
+      "spearman_rho": 0.476,
+      "spearman_p": 0.23293553465009806,
+      "kendall_tau": 0.357,
+      "kendall_p": 0.27509920634920637
+    },
+    "static_R0@hw20|static_R0@hw50": {
+      "spearman_rho": 0.857,
+      "spearman_p": 0.006530017254715293,
+      "kendall_tau": 0.786,
+      "kendall_p": 0.005505952380952381
+    },
+    "static_R0@hw20|peak_ih@published": {
+      "spearman_rho": 0.262,
+      "spearman_p": 0.5309228615658009,
+      "kendall_tau": 0.143,
+      "kendall_p": 0.7195436507936508
+    },
+    "static_R0@hw20|peak_ih@hw20": {
+      "spearman_rho": 0.548,
+      "spearman_p": 0.1600256425388966,
+      "kendall_tau": 0.429,
+      "kendall_p": 0.17886904761904762
+    },
+    "static_R0@hw20|peak_ih@hw50": {
+      "spearman_rho": 0.619,
+      "spearman_p": 0.1017330374542648,
+      "kendall_tau": 0.429,
+      "kendall_p": 0.17886904761904762
+    },
+    "static_R0@hw20|cum_infected@published": {
+      "spearman_rho": 0.357,
+      "spearman_p": 0.3851206435562562,
+      "kendall_tau": 0.214,
+      "kendall_p": 0.5484126984126985
+    },
+    "static_R0@hw20|cum_infected@hw20": {
+      "spearman_rho": 0.929,
+      "spearman_p": 0.0008629681828999772,
+      "kendall_tau": 0.857,
+      "kendall_p": 0.001736111111111111
+    },
+    "static_R0@hw20|cum_infected@hw50": {
+      "spearman_rho": 0.786,
+      "spearman_p": 0.02081512725352528,
+      "kendall_tau": 0.643,
+      "kendall_p": 0.03115079365079365
+    },
+    "static_R0@hw50|peak_ih@published": {
+      "spearman_rho": 0.214,
+      "spearman_p": 0.6103444156452668,
+      "kendall_tau": 0.071,
+      "kendall_p": 0.9048611111111111
+    },
+    "static_R0@hw50|peak_ih@hw20": {
+      "spearman_rho": 0.5,
+      "spearman_p": 0.20703124999999997,
+      "kendall_tau": 0.357,
+      "kendall_p": 0.27509920634920637
+    },
+    "static_R0@hw50|peak_ih@hw50": {
+      "spearman_rho": 0.667,
+      "spearman_p": 0.07098765432098757,
+      "kendall_tau": 0.5,
+      "kendall_p": 0.10868055555555556
+    },
+    "static_R0@hw50|cum_infected@published": {
+      "spearman_rho": 0.262,
+      "spearman_p": 0.5309228615658009,
+      "kendall_tau": 0.143,
+      "kendall_p": 0.7195436507936508
+    },
+    "static_R0@hw50|cum_infected@hw20": {
+      "spearman_rho": 0.786,
+      "spearman_p": 0.02081512725352528,
+      "kendall_tau": 0.643,
+      "kendall_p": 0.03115079365079365
+    },
+    "static_R0@hw50|cum_infected@hw50": {
+      "spearman_rho": 0.833,
+      "spearman_p": 0.010175540123456757,
+      "kendall_tau": 0.714,
+      "kendall_p": 0.014136904761904762
+    },
+    "peak_ih@published|peak_ih@hw20": {
+      "spearman_rho": 0.524,
+      "spearman_p": 0.18272075053971482,
+      "kendall_tau": 0.286,
+      "kendall_p": 0.39875992063492066
+    },
+    "peak_ih@published|peak_ih@hw50": {
+      "spearman_rho": 0.595,
+      "spearman_p": 0.11952980613879274,
+      "kendall_tau": 0.429,
+      "kendall_p": 0.17886904761904762
+    },
+    "peak_ih@published|cum_infected@published": {
+      "spearman_rho": 0.905,
+      "spearman_p": 0.00200827550542947,
+      "kendall_tau": 0.786,
+      "kendall_p": 0.005505952380952381
+    },
+    "peak_ih@published|cum_infected@hw20": {
+      "spearman_rho": 0.381,
+      "spearman_p": 0.3518125531175649,
+      "kendall_tau": 0.286,
+      "kendall_p": 0.39875992063492066
+    },
+    "peak_ih@published|cum_infected@hw50": {
+      "spearman_rho": 0.405,
+      "spearman_p": 0.3198886412288164,
+      "kendall_tau": 0.357,
+      "kendall_p": 0.27509920634920637
+    },
+    "peak_ih@hw20|peak_ih@hw50": {
+      "spearman_rho": 0.952,
+      "spearman_p": 0.0002604000243872511,
+      "kendall_tau": 0.857,
+      "kendall_p": 0.001736111111111111
+    },
+    "peak_ih@hw20|cum_infected@published": {
+      "spearman_rho": 0.286,
+      "spearman_p": 0.49272624501695705,
+      "kendall_tau": 0.214,
+      "kendall_p": 0.5484126984126985
+    },
+    "peak_ih@hw20|cum_infected@hw20": {
+      "spearman_rho": 0.524,
+      "spearman_p": 0.18272075053971482,
+      "kendall_tau": 0.429,
+      "kendall_p": 0.17886904761904762
+    },
+    "peak_ih@hw20|cum_infected@hw50": {
+      "spearman_rho": 0.381,
+      "spearman_p": 0.3518125531175649,
+      "kendall_tau": 0.214,
+      "kendall_p": 0.5484126984126985
+    },
+    "peak_ih@hw50|cum_infected@published": {
+      "spearman_rho": 0.405,
+      "spearman_p": 0.3198886412288164,
+      "kendall_tau": 0.357,
+      "kendall_p": 0.27509920634920637
+    },
+    "peak_ih@hw50|cum_infected@hw20": {
+      "spearman_rho": 0.643,
+      "spearman_p": 0.08555889101267328,
+      "kendall_tau": 0.429,
+      "kendall_p": 0.17886904761904762
+    },
+    "peak_ih@hw50|cum_infected@hw50": {
+      "spearman_rho": 0.571,
+      "spearman_p": 0.13895995716070678,
+      "kendall_tau": 0.357,
+      "kendall_p": 0.27509920634920637
+    },
+    "cum_infected@published|cum_infected@hw20": {
+      "spearman_rho": 0.524,
+      "spearman_p": 0.18272075053971482,
+      "kendall_tau": 0.357,
+      "kendall_p": 0.27509920634920637
+    },
+    "cum_infected@published|cum_infected@hw50": {
+      "spearman_rho": 0.595,
+      "spearman_p": 0.11952980613879274,
+      "kendall_tau": 0.429,
+      "kendall_p": 0.17886904761904762
+    },
+    "cum_infected@hw20|cum_infected@hw50": {
+      "spearman_rho": 0.881,
+      "spearman_p": 0.0038503204637324023,
+      "kendall_tau": 0.786,
+      "kendall_p": 0.005505952380952381
+    }
+  },
+  "views": {
+    "same_response_across_ranges": [
+      {
+        "response": "static_R0",
+        "range_pair": [
+          "published",
+          "hw20"
+        ],
+        "spearman_rho": 0.286,
+        "spearman_p": 0.49272624501695705,
+        "kendall_tau": 0.143,
+        "kendall_p": 0.7195436507936508,
+        "n_flipped_pairs": 12
+      },
+      {
+        "response": "static_R0",
+        "range_pair": [
+          "published",
+          "hw50"
+        ],
+        "spearman_rho": 0.214,
+        "spearman_p": 0.6103444156452668,
+        "kendall_tau": 0.071,
+        "kendall_p": 0.9048611111111111,
+        "n_flipped_pairs": 13
+      },
+      {
+        "response": "static_R0",
+        "range_pair": [
+          "hw20",
+          "hw50"
+        ],
+        "spearman_rho": 0.857,
+        "spearman_p": 0.006530017254715293,
+        "kendall_tau": 0.786,
+        "kendall_p": 0.005505952380952381,
+        "n_flipped_pairs": 3
+      },
+      {
+        "response": "peak_ih",
+        "range_pair": [
+          "published",
+          "hw20"
+        ],
+        "spearman_rho": 0.524,
+        "spearman_p": 0.18272075053971482,
+        "kendall_tau": 0.286,
+        "kendall_p": 0.39875992063492066,
+        "n_flipped_pairs": 10
+      },
+      {
+        "response": "peak_ih",
+        "range_pair": [
+          "published",
+          "hw50"
+        ],
+        "spearman_rho": 0.595,
+        "spearman_p": 0.11952980613879274,
+        "kendall_tau": 0.429,
+        "kendall_p": 0.17886904761904762,
+        "n_flipped_pairs": 8
+      },
+      {
+        "response": "peak_ih",
+        "range_pair": [
+          "hw20",
+          "hw50"
+        ],
+        "spearman_rho": 0.952,
+        "spearman_p": 0.0002604000243872511,
+        "kendall_tau": 0.857,
+        "kendall_p": 0.001736111111111111,
+        "n_flipped_pairs": 2
+      },
+      {
+        "response": "cum_infected",
+        "range_pair": [
+          "published",
+          "hw20"
+        ],
+        "spearman_rho": 0.524,
+        "spearman_p": 0.18272075053971482,
+        "kendall_tau": 0.357,
+        "kendall_p": 0.27509920634920637,
+        "n_flipped_pairs": 9
+      },
+      {
+        "response": "cum_infected",
+        "range_pair": [
+          "published",
+          "hw50"
+        ],
+        "spearman_rho": 0.595,
+        "spearman_p": 0.11952980613879274,
+        "kendall_tau": 0.429,
+        "kendall_p": 0.17886904761904762,
+        "n_flipped_pairs": 8
+      },
+      {
+        "response": "cum_infected",
+        "range_pair": [
+          "hw20",
+          "hw50"
+        ],
+        "spearman_rho": 0.881,
+        "spearman_p": 0.0038503204637324023,
+        "kendall_tau": 0.786,
+        "kendall_p": 0.005505952380952381,
+        "n_flipped_pairs": 3
+      }
+    ],
+    "same_range_across_responses": [
+      {
+        "range": "published",
+        "response_pair": [
+          "static_R0",
+          "peak_ih"
+        ],
+        "spearman_rho": 0.929,
+        "spearman_p": 0.0008629681828999772,
+        "kendall_tau": 0.857,
+        "kendall_p": 0.001736111111111111,
+        "n_flipped_pairs": 2
+      },
+      {
+        "range": "published",
+        "response_pair": [
+          "static_R0",
+          "cum_infected"
+        ],
+        "spearman_rho": 0.976,
+        "spearman_p": 3.3143960262000996e-05,
+        "kendall_tau": 0.929,
+        "kendall_p": 0.0003968253968253968,
+        "n_flipped_pairs": 1
+      },
+      {
+        "range": "published",
+        "response_pair": [
+          "peak_ih",
+          "cum_infected"
+        ],
+        "spearman_rho": 0.905,
+        "spearman_p": 0.00200827550542947,
+        "kendall_tau": 0.786,
+        "kendall_p": 0.005505952380952381,
+        "n_flipped_pairs": 3
+      },
+      {
+        "range": "hw20",
+        "response_pair": [
+          "static_R0",
+          "peak_ih"
+        ],
+        "spearman_rho": 0.548,
+        "spearman_p": 0.1600256425388966,
+        "kendall_tau": 0.429,
+        "kendall_p": 0.17886904761904762,
+        "n_flipped_pairs": 8
+      },
+      {
+        "range": "hw20",
+        "response_pair": [
+          "static_R0",
+          "cum_infected"
+        ],
+        "spearman_rho": 0.929,
+        "spearman_p": 0.0008629681828999772,
+        "kendall_tau": 0.857,
+        "kendall_p": 0.001736111111111111,
+        "n_flipped_pairs": 2
+      },
+      {
+        "range": "hw20",
+        "response_pair": [
+          "peak_ih",
+          "cum_infected"
+        ],
+        "spearman_rho": 0.524,
+        "spearman_p": 0.18272075053971482,
+        "kendall_tau": 0.429,
+        "kendall_p": 0.17886904761904762,
+        "n_flipped_pairs": 8
+      },
+      {
+        "range": "hw50",
+        "response_pair": [
+          "static_R0",
+          "peak_ih"
+        ],
+        "spearman_rho": 0.667,
+        "spearman_p": 0.07098765432098757,
+        "kendall_tau": 0.5,
+        "kendall_p": 0.10868055555555556,
+        "n_flipped_pairs": 7
+      },
+      {
+        "range": "hw50",
+        "response_pair": [
+          "static_R0",
+          "cum_infected"
+        ],
+        "spearman_rho": 0.833,
+        "spearman_p": 0.010175540123456757,
+        "kendall_tau": 0.714,
+        "kendall_p": 0.014136904761904762,
+        "n_flipped_pairs": 4
+      },
+      {
+        "range": "hw50",
+        "response_pair": [
+          "peak_ih",
+          "cum_infected"
+        ],
+        "spearman_rho": 0.571,
+        "spearman_p": 0.13895995716070678,
+        "kendall_tau": 0.357,
+        "kendall_p": 0.27509920634920637,
+        "n_flipped_pairs": 9
+      }
+    ]
+  },
+  "per_parameter_rank_span": {
+    "nv_ratio": {
+      "ranks": {
+        "static_R0@published": 1,
+        "static_R0@hw20": 6,
+        "static_R0@hw50": 5,
+        "peak_ih@published": 1,
+        "peak_ih@hw20": 4,
+        "peak_ih@hw50": 3,
+        "cum_infected@published": 1,
+        "cum_infected@hw20": 4,
+        "cum_infected@hw50": 3
+      },
+      "rank_min": 1,
+      "rank_max": 6,
+      "rank_span": 5,
+      "rank_mean": 3.111
+    },
+    "beta_hv": {
+      "ranks": {
+        "static_R0@published": 3,
+        "static_R0@hw20": 5,
+        "static_R0@hw50": 4,
+        "peak_ih@published": 3,
+        "peak_ih@hw20": 5,
+        "peak_ih@hw50": 5,
+        "cum_infected@published": 3,
+        "cum_infected@hw20": 6,
+        "cum_infected@hw50": 4
+      },
+      "rank_min": 3,
+      "rank_max": 6,
+      "rank_span": 3,
+      "rank_mean": 4.222
+    },
+    "beta_vh": {
+      "ranks": {
+        "static_R0@published": 2,
+        "static_R0@hw20": 3,
+        "static_R0@hw50": 6,
+        "peak_ih@published": 2,
+        "peak_ih@hw20": 3,
+        "peak_ih@hw50": 4,
+        "cum_infected@published": 2,
+        "cum_infected@hw20": 3,
+        "cum_infected@hw50": 5
+      },
+      "rank_min": 2,
+      "rank_max": 6,
+      "rank_span": 4,
+      "rank_mean": 3.333
+    },
+    "mu_v": {
+      "ranks": {
+        "static_R0@published": 4,
+        "static_R0@hw20": 2,
+        "static_R0@hw50": 2,
+        "peak_ih@published": 6,
+        "peak_ih@hw20": 7,
+        "peak_ih@hw50": 6,
+        "cum_infected@published": 4,
+        "cum_infected@hw20": 2,
+        "cum_infected@hw50": 2
+      },
+      "rank_min": 2,
+      "rank_max": 7,
+      "rank_span": 5,
+      "rank_mean": 3.889
+    },
+    "gamma_h": {
+      "ranks": {
+        "static_R0@published": 5,
+        "static_R0@hw20": 4,
+        "static_R0@hw50": 3,
+        "peak_ih@published": 4,
+        "peak_ih@hw20": 2,
+        "peak_ih@hw50": 2,
+        "cum_infected@published": 6,
+        "cum_infected@hw20": 5,
+        "cum_infected@hw50": 6
+      },
+      "rank_min": 2,
+      "rank_max": 6,
+      "rank_span": 4,
+      "rank_mean": 4.111
+    },
+    "b": {
+      "ranks": {
+        "static_R0@published": 6,
+        "static_R0@hw20": 1,
+        "static_R0@hw50": 1,
+        "peak_ih@published": 5,
+        "peak_ih@hw20": 1,
+        "peak_ih@hw50": 1,
+        "cum_infected@published": 5,
+        "cum_infected@hw20": 1,
+        "cum_infected@hw50": 1
+      },
+      "rank_min": 1,
+      "rank_max": 6,
+      "rank_span": 5,
+      "rank_mean": 2.444
+    },
+    "eip_days": {
+      "ranks": {
+        "static_R0@published": 7,
+        "static_R0@hw20": 7,
+        "static_R0@hw50": 7,
+        "peak_ih@published": 7,
+        "peak_ih@hw20": 8,
+        "peak_ih@hw50": 8,
+        "cum_infected@published": 7,
+        "cum_infected@hw20": 7,
+        "cum_infected@hw50": 7
+      },
+      "rank_min": 7,
+      "rank_max": 8,
+      "rank_span": 1,
+      "rank_mean": 7.222
+    },
+    "sigma_h": {
+      "ranks": {
+        "static_R0@published": 8,
+        "static_R0@hw20": 8,
+        "static_R0@hw50": 8,
+        "peak_ih@published": 8,
+        "peak_ih@hw20": 6,
+        "peak_ih@hw50": 7,
+        "cum_infected@published": 8,
+        "cum_infected@hw20": 8,
+        "cum_infected@hw50": 8
+      },
+      "rank_min": 6,
+      "rank_max": 8,
+      "rank_span": 2,
+      "rank_mean": 7.667
+    }
+  },
+  "top3": {
+    "per_cell": {
+      "static_R0@published": [
+        "nv_ratio",
+        "beta_vh",
+        "beta_hv"
+      ],
+      "static_R0@hw20": [
+        "b",
+        "mu_v",
+        "beta_vh"
+      ],
+      "static_R0@hw50": [
+        "b",
+        "mu_v",
+        "gamma_h"
+      ],
+      "peak_ih@published": [
+        "nv_ratio",
+        "beta_vh",
+        "beta_hv"
+      ],
+      "peak_ih@hw20": [
+        "b",
+        "gamma_h",
+        "beta_vh"
+      ],
+      "peak_ih@hw50": [
+        "b",
+        "gamma_h",
+        "nv_ratio"
+      ],
+      "cum_infected@published": [
+        "nv_ratio",
+        "beta_vh",
+        "beta_hv"
+      ],
+      "cum_infected@hw20": [
+        "b",
+        "mu_v",
+        "beta_vh"
+      ],
+      "cum_infected@hw50": [
+        "b",
+        "mu_v",
+        "nv_ratio"
+      ]
+    },
+    "distinct_sets": {
+      "beta_hv,beta_vh,nv_ratio": [
+        "static_R0@published",
+        "peak_ih@published",
+        "cum_infected@published"
+      ],
+      "b,beta_vh,mu_v": [
+        "static_R0@hw20",
+        "cum_infected@hw20"
+      ],
+      "b,gamma_h,mu_v": [
+        "static_R0@hw50"
+      ],
+      "b,beta_vh,gamma_h": [
+        "peak_ih@hw20"
+      ],
+      "b,gamma_h,nv_ratio": [
+        "peak_ih@hw50"
+      ],
+      "b,mu_v,nv_ratio": [
+        "cum_infected@hw50"
+      ]
+    },
+    "frequency_in_top3": {
+      "nv_ratio": 5,
+      "beta_hv": 3,
+      "beta_vh": 6,
+      "mu_v": 4,
+      "gamma_h": 3,
+      "b": 6,
+      "eip_days": 0,
+      "sigma_h": 0
+    }
+  },
+  "flips": {
+    "static_R0@published|static_R0@hw20": {
+      "n_flipped_pairs": 12,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "beta_hv>nv_ratio",
+          "order_second": "nv_ratio>beta_hv"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>nv_ratio",
+          "order_second": "nv_ratio>gamma_h"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "static_R0@published|static_R0@hw50": {
+      "n_flipped_pairs": 13,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "beta_hv>nv_ratio",
+          "order_second": "nv_ratio>beta_hv"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>nv_ratio",
+          "order_second": "nv_ratio>gamma_h"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "static_R0@published|peak_ih@published": {
+      "n_flipped_pairs": 2,
+      "flips": [
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        }
+      ]
+    },
+    "static_R0@published|peak_ih@hw20": {
+      "n_flipped_pairs": 12,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>nv_ratio",
+          "order_second": "nv_ratio>gamma_h"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>mu_v",
+          "order_second": "mu_v>sigma_h"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "static_R0@published|peak_ih@hw50": {
+      "n_flipped_pairs": 10,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>nv_ratio",
+          "order_second": "nv_ratio>gamma_h"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "static_R0@published|cum_infected@published": {
+      "n_flipped_pairs": 1,
+      "flips": [
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "static_R0@published|cum_infected@hw20": {
+      "n_flipped_pairs": 10,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "static_R0@published|cum_infected@hw50": {
+      "n_flipped_pairs": 9,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "static_R0@hw20|static_R0@hw50": {
+      "n_flipped_pairs": 3,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        }
+      ]
+    },
+    "static_R0@hw20|peak_ih@published": {
+      "n_flipped_pairs": 12,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "nv_ratio>b",
+          "order_second": "b>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "beta_hv>b",
+          "order_second": "b>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "beta_vh>b",
+          "order_second": "b>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "gamma_h>b",
+          "order_second": "b>gamma_h"
+        }
+      ]
+    },
+    "static_R0@hw20|peak_ih@hw20": {
+      "n_flipped_pairs": 8,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>mu_v",
+          "order_second": "mu_v>sigma_h"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "static_R0@hw20|peak_ih@hw50": {
+      "n_flipped_pairs": 8,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "static_R0@hw20|cum_infected@published": {
+      "n_flipped_pairs": 11,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "nv_ratio>b",
+          "order_second": "b>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "beta_hv>b",
+          "order_second": "b>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "beta_vh>b",
+          "order_second": "b>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "mu_v>b",
+          "order_second": "b>mu_v"
+        }
+      ]
+    },
+    "static_R0@hw20|cum_infected@hw20": {
+      "n_flipped_pairs": 2,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        }
+      ]
+    },
+    "static_R0@hw20|cum_infected@hw50": {
+      "n_flipped_pairs": 5,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        }
+      ]
+    },
+    "static_R0@hw50|peak_ih@published": {
+      "n_flipped_pairs": 13,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "nv_ratio>b",
+          "order_second": "b>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>beta_hv",
+          "order_second": "beta_hv>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "beta_hv>b",
+          "order_second": "b>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "beta_vh>b",
+          "order_second": "b>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "gamma_h>b",
+          "order_second": "b>gamma_h"
+        }
+      ]
+    },
+    "static_R0@hw50|peak_ih@hw20": {
+      "n_flipped_pairs": 9,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>beta_hv",
+          "order_second": "beta_hv>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>mu_v",
+          "order_second": "mu_v>sigma_h"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "static_R0@hw50|peak_ih@hw50": {
+      "n_flipped_pairs": 7,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>beta_hv",
+          "order_second": "beta_hv>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>mu_v",
+          "order_second": "mu_v>gamma_h"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "static_R0@hw50|cum_infected@published": {
+      "n_flipped_pairs": 12,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "nv_ratio>mu_v",
+          "order_second": "mu_v>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "nv_ratio>b",
+          "order_second": "b>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>beta_hv",
+          "order_second": "beta_hv>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "beta_hv>mu_v",
+          "order_second": "mu_v>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "beta_hv>b",
+          "order_second": "b>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "beta_vh>mu_v",
+          "order_second": "mu_v>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "beta_vh>b",
+          "order_second": "b>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "mu_v>b",
+          "order_second": "b>mu_v"
+        }
+      ]
+    },
+    "static_R0@hw50|cum_infected@hw20": {
+      "n_flipped_pairs": 5,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>beta_hv",
+          "order_second": "beta_hv>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        }
+      ]
+    },
+    "static_R0@hw50|cum_infected@hw50": {
+      "n_flipped_pairs": 4,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_hv"
+          ],
+          "order_first": "nv_ratio>beta_hv",
+          "order_second": "beta_hv>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        }
+      ]
+    },
+    "peak_ih@published|peak_ih@hw20": {
+      "n_flipped_pairs": 10,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>nv_ratio",
+          "order_second": "nv_ratio>gamma_h"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>mu_v",
+          "order_second": "mu_v>sigma_h"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "peak_ih@published|peak_ih@hw50": {
+      "n_flipped_pairs": 8,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>nv_ratio",
+          "order_second": "nv_ratio>gamma_h"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_vh",
+          "order_second": "beta_vh>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "sigma_h>eip_days",
+          "order_second": "eip_days>sigma_h"
+        }
+      ]
+    },
+    "peak_ih@published|cum_infected@published": {
+      "n_flipped_pairs": 3,
+      "flips": [
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "mu_v>b",
+          "order_second": "b>mu_v"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "peak_ih@published|cum_infected@hw20": {
+      "n_flipped_pairs": 10,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "peak_ih@published|cum_infected@hw50": {
+      "n_flipped_pairs": 9,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "gamma_h",
+            "b"
+          ],
+          "order_first": "b>gamma_h",
+          "order_second": "gamma_h>b"
+        }
+      ]
+    },
+    "peak_ih@hw20|peak_ih@hw50": {
+      "n_flipped_pairs": 2,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "mu_v>sigma_h",
+          "order_second": "sigma_h>mu_v"
+        }
+      ]
+    },
+    "peak_ih@hw20|cum_infected@published": {
+      "n_flipped_pairs": 11,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "nv_ratio>b",
+          "order_second": "b>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "beta_hv>b",
+          "order_second": "b>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "beta_vh>b",
+          "order_second": "b>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "mu_v>b",
+          "order_second": "b>mu_v"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "mu_v>sigma_h",
+          "order_second": "sigma_h>mu_v"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "eip_days>sigma_h",
+          "order_second": "sigma_h>eip_days"
+        }
+      ]
+    },
+    "peak_ih@hw20|cum_infected@hw20": {
+      "n_flipped_pairs": 8,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "mu_v>sigma_h",
+          "order_second": "sigma_h>mu_v"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "eip_days>sigma_h",
+          "order_second": "sigma_h>eip_days"
+        }
+      ]
+    },
+    "peak_ih@hw20|cum_infected@hw50": {
+      "n_flipped_pairs": 11,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "sigma_h"
+          ],
+          "order_first": "mu_v>sigma_h",
+          "order_second": "sigma_h>mu_v"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "eip_days>sigma_h",
+          "order_second": "sigma_h>eip_days"
+        }
+      ]
+    },
+    "peak_ih@hw50|cum_infected@published": {
+      "n_flipped_pairs": 9,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "nv_ratio>b",
+          "order_second": "b>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "beta_hv>b",
+          "order_second": "b>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "beta_vh>b",
+          "order_second": "b>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "mu_v>b",
+          "order_second": "b>mu_v"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "eip_days>sigma_h",
+          "order_second": "sigma_h>eip_days"
+        }
+      ]
+    },
+    "peak_ih@hw50|cum_infected@hw20": {
+      "n_flipped_pairs": 8,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "eip_days>sigma_h",
+          "order_second": "sigma_h>eip_days"
+        }
+      ]
+    },
+    "peak_ih@hw50|cum_infected@hw50": {
+      "n_flipped_pairs": 9,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "gamma_h"
+          ],
+          "order_first": "nv_ratio>gamma_h",
+          "order_second": "gamma_h>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "gamma_h"
+          ],
+          "order_first": "beta_vh>gamma_h",
+          "order_second": "gamma_h>beta_vh"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "gamma_h"
+          ],
+          "order_first": "mu_v>gamma_h",
+          "order_second": "gamma_h>mu_v"
+        },
+        {
+          "pair": [
+            "eip_days",
+            "sigma_h"
+          ],
+          "order_first": "eip_days>sigma_h",
+          "order_second": "sigma_h>eip_days"
+        }
+      ]
+    },
+    "cum_infected@published|cum_infected@hw20": {
+      "n_flipped_pairs": 9,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "beta_vh>nv_ratio",
+          "order_second": "nv_ratio>beta_vh"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "gamma_h>beta_hv",
+          "order_second": "beta_hv>gamma_h"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        }
+      ]
+    },
+    "cum_infected@published|cum_infected@hw50": {
+      "n_flipped_pairs": 8,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "mu_v"
+          ],
+          "order_first": "mu_v>nv_ratio",
+          "order_second": "nv_ratio>mu_v"
+        },
+        {
+          "pair": [
+            "nv_ratio",
+            "b"
+          ],
+          "order_first": "b>nv_ratio",
+          "order_second": "nv_ratio>b"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_hv",
+          "order_second": "beta_hv>mu_v"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "b"
+          ],
+          "order_first": "b>beta_hv",
+          "order_second": "beta_hv>b"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "mu_v"
+          ],
+          "order_first": "mu_v>beta_vh",
+          "order_second": "beta_vh>mu_v"
+        },
+        {
+          "pair": [
+            "beta_vh",
+            "b"
+          ],
+          "order_first": "b>beta_vh",
+          "order_second": "beta_vh>b"
+        },
+        {
+          "pair": [
+            "mu_v",
+            "b"
+          ],
+          "order_first": "b>mu_v",
+          "order_second": "mu_v>b"
+        }
+      ]
+    },
+    "cum_infected@hw20|cum_infected@hw50": {
+      "n_flipped_pairs": 3,
+      "flips": [
+        {
+          "pair": [
+            "nv_ratio",
+            "beta_vh"
+          ],
+          "order_first": "nv_ratio>beta_vh",
+          "order_second": "beta_vh>nv_ratio"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "beta_vh"
+          ],
+          "order_first": "beta_hv>beta_vh",
+          "order_second": "beta_vh>beta_hv"
+        },
+        {
+          "pair": [
+            "beta_hv",
+            "gamma_h"
+          ],
+          "order_first": "beta_hv>gamma_h",
+          "order_second": "gamma_h>beta_hv"
+        }
+      ]
+    }
+  },
+  "self_check": {
+    "all_cells_present": true,
+    "missing_cells": [],
+    "ranks_match_prcc": {
+      "static_R0@published": true,
+      "static_R0@hw20": true,
+      "static_R0@hw50": true,
+      "peak_ih@published": true,
+      "cum_infected@published": true,
+      "peak_ih@hw20": true,
+      "cum_infected@hw20": true,
+      "peak_ih@hw50": true,
+      "cum_infected@hw50": true
+    },
+    "pairwise_recompute_matches": true,
+    "all_pass": true
+  },
+  "meta": {
+    "script": "run_rank_matrix.py",
+    "random_seed": 20260816,
+    "n_samples": 2000,
+    "run_date_utc": "2026-11-25T14:29:19+00:00",
+    "run_date_local": "2026-11-25T22:29:19+08:00",
+    "wall_seconds_total": 0.0,
+    "seconds_per_ode_solve": 0.0,
+    "n_ode_solves": 0,
+    "t_span_days": [
+      0,
+      1095
+    ],
+    "n_output_points": 1096,
+    "output_resolution_days": 1.0,
+    "python": "3.13.12",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+    "host_cpus": 10,
+    "model_source": "../src/model.py (unmodified)",
+    "src_sha256": {
+      "model.py": "8664b17fdfe05dd7c5ae904d628a045cc529007b5ca5ec0a795bcddc95a3db08",
+      "r0.py": "3891a2e68569747aaebf801c3e5849adc3786f6d05c81dc474c27729762411fe",
+      "sensitivity.py": "1a15820f734af00f003ddfaea24eea618bfb8acea6f6ea421c6c33bd61b6c060",
+      "scenarios.py": "105a33251bc8451e19307ac0fb31f112aeb922fd391492a6f8bacea84cef5034"
+    },
+    "note": "aggregation only; reuses tasks A/D/F/G results"
+  }
+}
